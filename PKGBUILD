@@ -1,17 +1,17 @@
 # Maintainer: Holmes <holmes_holmes [at] live [dot] com>
 
-pkgname=('jwm-documentation')
-pkgver=16.06
+pkgname=('upnotifier')
+pkgver=17.04
 pkgrel=1
-pkgdesc='User Orientation Guide for Manjaro-JWM'
+pkgdesc='Check for pacman updates and notify user'
 license=('CC-BY-SA 4.0')
 arch=('any')
-url="https://github.com/holmeslinux/$pkgname"
+url="https://github.com/kibojoe/upnotifier"
 makedepends=('git')
 source=("git+$url.git")
 sha256sums=('SKIP')
 
 package() {
   cd $srcdir/$pkgname
-  install -Dm644 User_Orientation_Guide.pdf $pkgdir/usr/share/doc/livecd/User_Orientation_Guide.pdf
+	install -dm755 $pkgdir/usr/bin
 }
