@@ -1,6 +1,6 @@
 # Maintainer: Holmes <holmes_holmes [at] live [dot] com>
 
-pkgname=('upnotifier')
+pkgname=('upnotifier-kibojoe')
 pkgver=17.04
 pkgrel=1
 pkgdesc='Check for pacman updates and notify user'
