@@ -1,16 +1,16 @@
 #!/bin/sh
 #
-###################################################
-# Kibojoe Linux 			          #
-# Updated 22.07.2017 21:55:02 		          #
-# Version 0.1-2 			          #
-# Name upnotifier ; Update Notifier               #
-# Use chmod +x upnotifier ; /usr/bin/             #
-# Credits Chrysostomus (Manjaro Linux)		  #
-# Site http://polr.me/1gmk                        #
-# Adapted Holmes (Manjaro Brasil)                 #
-# License Copyleft                                #
-###################################################
+##################################################################
+# Kibojoe Linux 			                         #
+# Updated 22.07.2017 21:55:02 		                         #
+# Version 0.1-2 			                         #
+# Name upnotifier ; Update Notifier                              #
+# Use chmod +x upnotifier ; /usr/bin/                            #
+# Credits Chrysostomus and deadguy [code pacaur] (Manjaro Linux) #
+# Site http://polr.me/1gmk                                       #
+# Adapted Holmes (Manjaro Brasil)                                #
+# License Copyleft                                               #
+##################################################################
 
 trap 'rm /tmp/{pacmanupdates,aurupdates} 2>/dev/null' INT TERM QUIT EXIT
    nb_pac=$(checkupdates | tee /tmp/pacmanupdates | wc -l)
@@ -18,6 +18,12 @@ if [ -f /usr/bin/yaourt ]; then
    nb_aur=$(yaourt -Qua | grep "^aur/" | tee /tmp/aurupdates | wc -l)
 else
    nb_aur=0
+fi
+
+if [ -f /usr/bin/pacaur ]; then
+    nb_aur=$(pacaur -Qua | grep "^aur/" | tee /tmp/aurupdates | wc -l)
+else
+    nb_aur=0
 fi
 
 if ((nb_pac>0 || nb_aur>0)); then
