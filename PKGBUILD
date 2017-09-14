@@ -1,7 +1,7 @@
 # Maintainer: Holmes <holmes_holmes [at] live [dot] com>
 
 pkgname=('upnotifier')
-pkgver=17.04
+pkgver=1709
 pkgrel=1
 pkgdesc='Check for pacman updates and notify user'
 license=('CC-BY-SA 4.0')
